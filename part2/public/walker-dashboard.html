@@ -41,24 +41,24 @@
 
     createApp({
       methods: {
-    async logout() {
-      try {
-        const res = await fetch('/api/users/logout', {
-          method: 'POST',
-          credentials: 'include'
-        });
+        async logout() {
+          try {
+            const res = await fetch('/api/users/logout', {
+              method: 'POST',
+              credentials: 'include'
+            });
 
-        if (res.ok) {
-          window.location.href = '/'; // back to login
-        } else {
-          alert('Logout failed.');
+            if (res.ok) {
+              window.location.href = '/'; // back to login
+            } else {
+              alert('Logout failed.');
+            }
+          } catch (err) {
+            console.error(err);
+            alert('Server error on logout.');
+          }
         }
-      } catch (err) {
-        console.error(err);
-        alert('Server error on logout.');
-      }
-    }
-  },
+      },
       setup() {
         const walks = ref([]);
         const message = ref('');
