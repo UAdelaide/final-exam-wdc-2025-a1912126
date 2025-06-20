@@ -50,7 +50,7 @@
             });
 
             if (res.ok) {
-              window.location.href = '/'; 
+              window.location.href = '/';
             } else {
               alert('Logout failed.');
             }
@@ -64,7 +64,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = 3;
+        const user = ref(null);
 
         async function loadWalkRequests() {
           try {
