@@ -39,8 +39,8 @@ let db;
     db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '',
-      database: ''
+      password: 'newpassword',
+      database: 'DogWalkService'
     });
 
     // Create tables if they don't exist
@@ -148,7 +148,6 @@ let db;
   }
 })();
 
-// ROUTE: /api/dogs
 app.get('/api/dogs', async (req, res) => {
   try {
     const [rows] = await db.query(`
