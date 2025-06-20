@@ -30,7 +30,7 @@ let db;
     const setupConnection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '' // Use your MySQL password
+      password: 'newpassword'
     });
     await setupConnection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
     await setupConnection.end();
@@ -40,7 +40,7 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'DogWalkService'
+      database: ''
     });
 
     // Create tables if they don't exist
