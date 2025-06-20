@@ -58,7 +58,7 @@ router.get('/walkers/summary', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch walker summaries.' });
   }
 });
-// POST /api/
+// POST /api/login
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   try {
