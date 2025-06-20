@@ -10,6 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '/public')));
 
+app.use(session({
+  secret: 'super-secret-key', // change to env var in production
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } 
+}));
+
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
