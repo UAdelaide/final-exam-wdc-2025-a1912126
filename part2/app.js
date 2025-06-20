@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(session({
-  secret: 'super-secret-key',
+  secret: 'mydogwalkapp2025$@#*!',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }
