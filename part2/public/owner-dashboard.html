@@ -78,7 +78,7 @@
         });
 
         if (res.ok) {
-          window.location.href = '/'; // back to login
+          window.location.href = '/'; 
         } else {
           alert('Logout failed.');
         }
@@ -87,7 +87,7 @@
         alert('Server error on logout.');
       }
     }
-  };
+  },
       setup() {
         const form = ref({
           dog_id: '',
