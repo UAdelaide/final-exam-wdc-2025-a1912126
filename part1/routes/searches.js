@@ -1,7 +1,7 @@
 // routes/searches.js
 const express = require('express');
 const router = express.Router();
-const db = require('../db'); 
+const db = require('../db.js');
 
 // GET /api/dogs
 router.get('/dogs', async (req, res) => {
