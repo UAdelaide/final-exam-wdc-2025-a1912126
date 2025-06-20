@@ -4,10 +4,7 @@ const db = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: 'newpassword',
-  database: 'DogWalkService',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+  database: 'DogWalkService'
 });
 
 module.exports = db;
