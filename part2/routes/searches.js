@@ -58,5 +58,26 @@ router.get('/walkers/summary', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch walker summaries.' });
   }
 });
+// POST /api/
+router.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const [users] = await db.query('SELECT * FROM Users WHERE username = ?', [username]);
+    const user = users[0];
 
+    if (!user || user.password_hash !== password) {
+      return res.status(401).json({ error: 'Invalid username or password' });
+    }
+
+    req.session.user = {
+      id: user.user_id,
+      username: user.username,
+      role: user.role
+    };
+
+    res.json({ role: user.role });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
 module.exports = router;
