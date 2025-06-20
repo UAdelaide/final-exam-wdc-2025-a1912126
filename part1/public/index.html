@@ -41,28 +41,42 @@
       border: none;
       cursor: pointer;
     }
-    .dog-info {
+    .title {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 1.8em;
+      font-weight: bold;
+      text-shadow: 2px 2px 0 black;
+    }
+    .dog-name {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 0 black;
+      max-width: 150px;
+    }
+    .owner-name {
       position: fixed;
       bottom: 10px;
       right: 10px;
       font-size: 2em;
       font-weight: bold;
-      text-shadow: 3px 3px 0 black;
-      max-width: 200px;
-      line-height: 1.2;
+      text-shadow: 2px 2px 0 black;
+      max-width: 150px;
+      text-align: right;
     }
   </style>
 </head>
 <body>
   <div id="app">
-    <h1 style="text-align:center;">Dog of the Day</h1>
+    <div class="title">Dog of the Day</div>
     <img :src="dogImage" alt="Random Dog Picture" />
     <button @click="fetchDog">New Dog Picture</button>
-    <p class="dog-info">
-      Name: Maximus<br />
-      Breed: Mystery Breed<br />
-      Owner: alice123
-    </p>
+    <div class="dog-name">Name: Max</div>
+    <div class="owner-name">Owner: alice123</div>
   </div>
 
   <script>
