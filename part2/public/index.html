@@ -25,6 +25,33 @@
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
+
+    <h2 class="text-dark mt-5 mb-3">All Registered Dogs</h2>
+      <div v-if="dogs.length > 0">
+        <table class="table table-bordered align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Dog ID</th>
+              <th>Name</th>
+              <th>Size</th>
+              <th>Owner</th>
+              <th>Photo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(dog, index) in dogs" :key="dog.dog_id">
+              <td>{{ dog.dog_id }}</td>
+              <td>{{ dog.dog_name }}</td>
+              <td>{{ dog.size }}</td>
+              <td>{{ dog.owner_username }}</td>
+              <td>
+                <img :src="dogImages[index]" alt="Dog photo" width="100" height="100" class="rounded" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p v-else>Loading dogs...</p>
   </div>
 
   <script>
