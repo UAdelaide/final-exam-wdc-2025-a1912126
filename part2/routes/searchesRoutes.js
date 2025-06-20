@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-// GET /api/dogs - fetch all dogs with owner info
+// GET /api/dogs - fetch all 
 router.get('/', async (req, res) => {
   try {
     const [rows] = await db.query(`
