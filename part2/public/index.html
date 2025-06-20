@@ -97,6 +97,28 @@
           }
         }
       },
+      async fetchDogs() {
+          try {
+            const res = await fetch('/api/dogs');
+            const data = await res.json();
+            this.dogs = data;
+
+            // Fetch one random photo per dog
+            const imagePromises = data.map(() =>
+              fetch('https://dog.ceo/api/breeds/image/random')
+                .then(r => r.json())
+                .then(img => img.message)
+            );
+
+            this.dogImages = await Promise.all(imagePromises);
+          } catch (err) {
+            console.error('Failed to fetch dogs or images:', err);
+          }
+        }
+      },
+      mounted() {
+        this.fetchDogs();
+      }
     }).mount('#app');
   </script>
 
