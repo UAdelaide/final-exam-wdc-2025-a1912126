@@ -40,10 +40,10 @@
           </thead>
           <tbody>
             <tr v-for="(dog, index) in dogs" :key="dog.dog_id">
-              <td>{{ dog.id }}</td>
+              <td>{{ dog.dog_id }}</td>
               <td>{{ dog.name }}</td>
               <td>{{ dog.size }}</td>
-              <td>{{ dog.owner_username }}</td>
+              <td>{{ dog.owner_id }}</td>
               <td>
                 <img :src="dogImages[index] || 'https://via.placeholder.com/100?text=Dog'" alt="Dog photo" width="100" height="100" class="rounded" />
               </td>
