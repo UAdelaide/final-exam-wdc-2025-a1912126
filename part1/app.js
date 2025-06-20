@@ -161,7 +161,6 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 
-// ROUTE: /api/walkrequests/open
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [rows] = await db.query(`
@@ -178,7 +177,6 @@ app.get('/api/walkrequests/open', async (req, res) => {
   }
 });
 
-// ROUTE: /api/walkers/summary
 app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [rows] = await db.query(`
@@ -203,7 +201,6 @@ app.get('/api/walkers/summary', async (req, res) => {
   }
 });
 
-// Start server
 app.listen(PORT, () => {
   console.log(`API server running at http://localhost:${PORT}`);
 });
