@@ -1,10 +1,9 @@
-// db.js
 const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
   host: 'localhost',
-  user: 'youruser',
-  password: 'yourpassword',
+  user: 'root',
+  password: 'newpassword',
   database: 'DogWalkService',
   waitForConnections: true,
   connectionLimit: 10,
