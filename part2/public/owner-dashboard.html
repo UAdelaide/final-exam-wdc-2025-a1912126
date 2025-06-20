@@ -25,7 +25,7 @@
             <select v-model="form.dog_id" class="form-select" required>
               <option value="" disabled selected>-- Choose a dog --</option>
               <option v-for="dog in myDogs" :value="dog.dog_id">
-                {{ dog.name }} 
+                {{ dog.name }}
               </option>
             </select>
           </div>
@@ -114,7 +114,7 @@
             error.value = 'Failed to load walk requests';
           }
         }
-
+        
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
