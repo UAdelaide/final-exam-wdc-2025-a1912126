@@ -95,6 +95,19 @@
           }
         }
 
+        async function getCurrentUser() {
+          try {
+            const res = await fetch('/api/users/me', {
+              credentials: 'include'
+            });
+            if (!res.ok) throw new Error('Not logged in');
+            user.value = await res.json();
+          } catch (err) {
+            error.value = 'Failed to fetch user';
+          }
+        }
+
+
         onMounted(() => {
           loadWalkRequests();
         });
