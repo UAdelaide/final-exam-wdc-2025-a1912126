@@ -72,4 +72,15 @@ router.post('/logout', (req, res) => {
     res.json({ message: 'Logged out' });
   });
 });
+
+// Get all dogs for a specific owner
+router.get('/:id/dogs', async (req, res) => {
+  const ownerId = req.params.id;
+  try {
+    const [rows] = await db.query('SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?', [ownerId]);
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to load dogs' });
+  }
+});
 module.exports = router;
