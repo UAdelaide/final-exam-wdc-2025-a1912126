@@ -61,7 +61,7 @@
       data() {
         return {
           message: 'Welcome to the Dog Walking Service!',
-          email: '',
+          username: '',
           password: '',
           error: '',
           dogs: [],
@@ -75,7 +75,7 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               credentials: 'include',
-              body: JSON.stringify({ email: this.email, password: this.password })
+              body: JSON.stringify({ username: this.username, password: this.password })
             });
 
             const data = await res.json();
