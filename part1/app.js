@@ -204,5 +204,4 @@ app.get('/api/walkers/summary', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`API server running at http://localhost:${PORT}`);
 });
-
 module.exports = app;
