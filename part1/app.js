@@ -7,7 +7,7 @@ var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var searchesRouter = require('./routes/searches');
+var searchesRouter = require('./routes/searches.js');
 var app = express();
 
 // view engine setup
