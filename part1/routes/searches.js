@@ -1,20 +1,7 @@
 // routes/searches.js
 const express = require('express');
 const router = express.Router();
-
-// Import your db connection (you'll need to export it from app.js or use a shared db module)
-const mysql = require('mysql2/promise');
-let db;
-
-// Setup DB connection when this file is loaded
-(async () => {
-  db = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'yourpassword',
-    database: 'DogWalkService'
-  });
-})();
+const db = require('../db'); 
 
 // GET /api/dogs
 router.get('/dogs', async (req, res) => {
