@@ -114,7 +114,20 @@
             error.value = 'Failed to load walk requests';
           }
         }
-        
+        async function loadMyDogs() {
+          try {
+            const res = await fetch('/api/users/me', {
+              credentials: 'include'
+            });
+            if (!res.ok) throw new Error('Not logged in');
+            const user = await res.json();
+
+            const dogRes = await fetch(`/api/users/${user.user_id}/dogs`);
+            myDogs.value = await dogRes.json();
+          } catch (err) {
+            error.value = 'Failed to load your dogs';
+          }
+        }
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
